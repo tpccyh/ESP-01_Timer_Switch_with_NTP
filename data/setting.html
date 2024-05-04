@@ -1,0 +1,55 @@
+<!-- Page Content -->
+<div style="margin-left:25%">
+  <h1>Settings</h1>
+  <hr>
+  <div class="flex-parent jc-center">
+    <form action="/SAVE_CFG" method="post">
+      <table align="center">
+        <tr><th colspan="2">Station Mode</th></tr>
+        <tr><td>SSID:</td><td><select name="ssid">#</select></td></tr>
+        <tr><td>Password:</td><td><input type="text" name="pwrd" value="#"></td></tr>
+        <tr><th colspan="2">Access Point Mode</th></tr>
+        <tr><td>AP SSID:</td><td><input type="text" name="ap_ssid" value="#"></td></tr>
+        <tr><td>AP Password:</td><td><input type="text" name="ap_pwrd" value="#"></td></tr>
+        <tr><th colspan="2">Network Time</th></tr>
+        <tr><td>NTP Server:</td><td><input type="text" name="clk_ntp" value="#"></td></tr>
+        <tr><td>Time Zone:</td><td><select name="clk_zone">#
+          <option value="840">UTC+14</option><option value="780">UTC+13</option><option value="765">UTC+12:45</option><option value="720">UTC+12</option><option value="660">UTC+11</option>
+          <option value="630">UTC+10:30</option><option value="600">UTC+10</option><option value="570">UTC+9:30</option><option value="540">UTC+9</option><option value="525">UTC+8:45</option>
+          <option value="480">UTC+8</option><option value="420">UTC+7</option><option value="390">UTC+6:30</option><option value="360">UTC+6</option><option value="345">UTC+5:45</option>
+          <option value="330">UTC+5:30</option><option value="300">UTC+5</option><option value="270">UTC+4:30</option><option value="240">UTC+4</option><option value="210">UTC+3:30</option>
+          <option value="180">UTC+3</option><option value="120">UTC+2</option><option value="60">UTC+1</option><option value="0">UTC+0</option><option value="-60">UTC-1</option>
+          <option value="-120">UTC-2</option><option value="-150">UTC-2:30</option><option value="-180">UTC-3</option><option value="-240">UTC-4</option><option value="-300">UTC-5</option>
+          <option value="-360">UTC-6</option><option value="-420">UTC-7</option><option value="-480">UTC-8</option><option value="-540">UTC-9</option><option value="-570">UTC-9:30</option>
+          <option value="-600">UTC-10</option><option value="-660">UTC-11</option><option value="-720">UTC-12</option></select></td></tr>
+      </table>
+      <br>
+      <button class="button button1" type="submit">Save</button>
+    </form>
+    <hr>
+    <form action="/ADJ_TIME" method="post">
+      <table align="center">
+        <tr><th colspan="2">Adjust Time</th></tr>
+        <tr><td>Time:</td><td><input type="time" name="set_time" value="#"></td></tr>
+      </table>
+      <button class="button button3" type="submit">Apply</button>
+    </form>
+    <hr>
+    <button class="button button2" onclick="confirm_reboot()">Reboot</button>
+    <button class="button button2" onclick="confirm_reset()">Factory Reset</button>
+  </div>
+</div>
+<script>
+function confirm_reset() {
+  if (confirm('Factory reset will erase all data, proceed with caution!')==true) {
+    window.location.href = '/RESET';
+  }
+}
+function confirm_reboot() {
+  if (confirm('Confirm Reboot?')==true) {
+    window.location.href = '/REBOOT';
+  }
+}
+</script>
+</body>
+</html>

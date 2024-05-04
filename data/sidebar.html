@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head><title>ESP8266 RELAY Control</title><style>
+.button {
+  border: none;
+  padding: 36px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+  margin: 24px 24px;
+  cursor: pointer;
+  width: 50%;
+  border-radius: 15px;
+  box-shadow: 9px 9px MidnightBlue;
+}
+.button:active {
+  box-shadow: 5px 5px MidnightBlue;
+  transform: translateY(4px);
+}
+.button1 {background-color: Chartreuse; color: black;}
+.button2 {background-color: DarkSlateBlue; color: white;}
+.button3 {background-color: #E6E600; color: black;}
+h1 {text-align: center; color: black}
+div {text-align: center;}
+body {
+  background-color:Silver;
+  font-family: Verdana;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: DimGrey;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  font-size: 36px;
+  text-decoration: none;
+}
+.sidebar a:hover:not(.active) {
+  background-color:  DarkSlateBlue;
+  color: white;
+}
+input[type=checkbox] {
+    width: 40px;
+    height: 40px;
+}
+input[type=text] {
+    font-size: 1.2em;
+}
+input[type=time] {
+    font-size: 1.5em;
+}
+select {
+    font-size: 1em;
+}
+table {
+    font-size: 1.75em;   /* 28px/16=1.75em */
+}
+td {
+    text-align: left;
+}
+</style></head>
+
+<body>
+<!-- Sidebar -->
+<nav class="sidebar">
+  <a href='/'>Control</a>
+  <a href='/SCHEDULE'>Schedule</a>
+  <a href='/SETTING'>Settings</a>
+  <a href='/STATUS'>Status</a>
+</nav>
